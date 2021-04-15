@@ -1,0 +1,6 @@
+.empty-cart{
+    display: grid;
+    min-height: 50vh;
+    place-items: center;
+    color: rgb(161, 151, 151);
+}

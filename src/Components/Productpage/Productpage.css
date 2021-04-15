@@ -1,0 +1,13 @@
+.product-page{
+    width: 100%;
+    display: flex;
+}
+.product-img{
+    width: 50%;
+}
+.product-img img{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

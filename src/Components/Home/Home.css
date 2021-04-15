@@ -1,0 +1,34 @@
+.products{
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product{
+    width: 22%;
+    margin-bottom: 100px;
+}
+.product img{
+    width: 100%;
+}
+.view-product{
+    width: fit-content;
+}
+.product-info{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.view-product h4{
+    cursor: pointer;
+    background: #d2302c;
+    color: #f6f4f6;
+    padding: 7px 15px;
+    border-radius: 10px;
+    transition: .2s;
+}
+.view-product h4:hover{
+    background: #9c2321;
+    
+}
