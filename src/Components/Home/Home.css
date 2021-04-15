@@ -18,9 +18,14 @@
 .product-info{
     display: flex;
     margin-top: 20px;
+    width: 100%;
     justify-content: space-between;
 }
-.view-product h4{
+.product-name-price{
+    width: 50%;
+}
+.view-product h5{
+    width: fit-content;
     cursor: pointer;
     background: #d2302c;
     color: #f6f4f6;
@@ -28,7 +33,7 @@
     border-radius: 10px;
     transition: .2s;
 }
-.view-product h4:hover{
+.view-product h5:hover{
     background: #9c2321;
     
 }

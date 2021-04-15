@@ -31,7 +31,7 @@ const Home = () => {
                                         <h5>Price: {product.price.formatted_with_symbol}</h5>
                                     </div>
                                     <div className="view-product">
-                                        <h4 onClick={()=>history.push(`/product/${product.name}/${product.id}`)}>View Product</h4>
+                                        <h5 onClick={()=>history.push(`/product/${product.name}/${product.id}`)}>View Product</h5>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,6 @@
 .product-page{
     width: 100%;
+    margin-top: 50px;
     display: flex;
 }
 .product-img{
@@ -10,4 +11,20 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.varients{
+    margin-bottom: 10px;
+}
+.add-to-cart{
+    cursor: pointer;
+    background: #d2302c;
+    color: #f6f4f6;
+    padding: 7px 15px;
+    border-radius: 10px;
+    transition: .2s;
+    user-select: none;
+    width: fit-content;
+}
+.add-to-cart:hover{
+    background: #9c2321;
 }

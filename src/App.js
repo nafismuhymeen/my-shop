@@ -8,17 +8,19 @@ import Nav from './Components/Nav/Nav';
 import Productpage from './Components/Productpage/Productpage';
 
 function App() {
+  // Variables and States
   const [cart, setCart] = useState([]);
 
+
+//Function for Getting Cart Item
   const gettingCart = ()=>{
     commerce.cart.contents()
     .then(res => setCart(res))
   }
-
+// Calling The Function for Getting Cart Item
   useEffect(()=>{
     gettingCart();
   },[])
-  console.log(cart);
   return (
     <Router>
       <Nav cart={cart}/>
@@ -30,7 +32,7 @@ function App() {
           <Mycart cart={cart}/>
         </Route>
         <Route path='/product/:name/:id'>
-          <Productpage cart={cart}/>
+          <Productpage setCart={setCart}/>
         </Route>
       </Switch>
     </Router>
