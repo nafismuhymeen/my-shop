@@ -21,6 +21,7 @@ function App() {
   useEffect(()=>{
     gettingCart();
   },[])
+  console.log(cart);
   return (
     <Router>
       <Nav cart={cart}/>
@@ -29,7 +30,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route path='/my-cart'>
-          <Mycart cart={cart}/>
+          <Mycart cart={cart} setCart={setCart}/>
         </Route>
         <Route path='/product/:name/:id'>
           <Productpage setCart={setCart}/>
