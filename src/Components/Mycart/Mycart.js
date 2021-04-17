@@ -5,6 +5,7 @@ import './Mycart.css';
 const Mycart = ({ cart, setCart }) => {
 // Variables and States
     const [cartLength, setCartLength] = useState(0);
+    const [totalAmount, setTotalAmount] = useState('');
 
 // Function for Remove Item from Cart
     const removeItem = id=>{
@@ -21,6 +22,11 @@ const Mycart = ({ cart, setCart }) => {
     useEffect(()=>{
         setCartLength(cart.length)
     },[cart.length])
+// Setting totalAmount
+    useEffect(()=>{
+        commerce.cart.retrieve()
+        .then(res => setTotalAmount(res.subtotal.formatted_with_symbol))
+    },[cart.length])
     return (
         <>
             {cartLength === 0 &&
@@ -28,6 +34,7 @@ const Mycart = ({ cart, setCart }) => {
             }
             {cartLength !== 0 &&
                 <>
+                    <h2>Total Amount: {totalAmount}</h2>
                     <section className="busy-cart">
                         {cart.map(item=>{return(
                             <div className="cart-item" key={item.id} >
