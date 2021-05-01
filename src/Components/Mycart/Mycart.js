@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import commerce from '../../commerce';
 import './Mycart.css';
 
@@ -6,7 +7,7 @@ const Mycart = ({ cart, setCart }) => {
 // Variables and States
     const [cartLength, setCartLength] = useState(0);
     const [totalAmount, setTotalAmount] = useState('');
-
+    const history = useHistory();
 // Function for Remove Item from Cart
     const removeItem = id=>{
         commerce.cart.remove(id)
@@ -50,7 +51,7 @@ const Mycart = ({ cart, setCart }) => {
                         )})}
                     </section>
                     <div className="checkout-empty-cart">
-                        <h3 style={{marginLeft:"3.2%"}}>Checkout</h3>
+                        <h3 onClick={()=>history.push('/checkout')} style={{marginLeft:"3.2%"}}>Checkout</h3>
                         <h3 onClick={()=>emptyCart()} style={{marginRight:"3.2%"}}>Empty Cart</h3>
                     </div>
                 </>

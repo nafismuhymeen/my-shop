@@ -1,0 +1,12 @@
+.checkout-form{
+    width: 50%;
+    margin: 0 auto;
+}
+.payments{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.payments h1{
+    text-align: center;
+}
