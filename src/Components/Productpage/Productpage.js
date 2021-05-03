@@ -19,7 +19,7 @@ const Productpage = ({ setCart }) => {
 // Function for adding Products into Cart
     const addToCart = ()=>{
         commerce.cart.add(id, quantity, variants)
-        .then(res => setCart(res.cart.line_items))
+        .then(res => setCart(res.cart))
     }
 // Retrieving Product
     useEffect(()=>{

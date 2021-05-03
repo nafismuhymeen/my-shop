@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe('pk_test_51IlxBsFrckEOPF17G0qwIYmeyiERr1kfHulxp0XQdaRs5C7H5sqM4khoQhkALdJL1gXBgihXBrCywAyBzUQaFXiR00zTBzPeb9');
 
-const Payments = ({checkOutId, checkOut, customerData, handleCaptureCheckout, setCheckOutPage}) => {
+const Payments = ({checkOutId, checkOut, customerData, handleCaptureCheckout, setCheckOutPage, nextPage}) => {
     const handleSubmit = async (event, elements, stripe) => {
         event.preventDefault();
     
@@ -20,7 +20,7 @@ const Payments = ({checkOutId, checkOut, customerData, handleCaptureCheckout, se
           const orderData = {
             line_items: checkOut.live.line_items,
             customer: { firstname: customerData.firstname, lastname: customerData.lastname, email: customerData.email },
-            shipping: { name: customerData.firstname+''+customerData.lastname, street: customerData.street, town_city: customerData.town_city, county_state: customerData.subdivision, postal_zip_code: customerData.postal_zip_code, country: customerData.country },
+            shipping: { name: customerData.firstname+' '+customerData.lastname, street: customerData.street, town_city: customerData.town_city, county_state: customerData.subdivision, postal_zip_code: customerData.postal_zip_code, country: customerData.country },
             fulfillment: { shipping_method: customerData.shipping },
             payment: {
               gateway: 'stripe',
@@ -29,9 +29,8 @@ const Payments = ({checkOutId, checkOut, customerData, handleCaptureCheckout, se
               },
             },
           };
-    
           handleCaptureCheckout(checkOutId, orderData);
-
+          nextPage();
         }
       };
     return (

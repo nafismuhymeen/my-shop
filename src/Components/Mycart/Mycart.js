@@ -1,43 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
-import commerce from '../../commerce';
+import Spinner from '../../Spinner';
 import './Mycart.css';
 
-const Mycart = ({ cart, setCart }) => {
+const Mycart = ({ cart, emptyCart, removeFromCart }) => {
 // Variables and States
-    const [cartLength, setCartLength] = useState(0);
-    const [totalAmount, setTotalAmount] = useState('');
-    const history = useHistory();
-// Function for Remove Item from Cart
-    const removeItem = id=>{
-        commerce.cart.remove(id)
-        setCart(cart.filter(item=>{return item.id !== id}))
-    }
-// Function to Empty Cart
-    const emptyCart = ()=>{
-        commerce.cart.empty()
-        .then(res => setCart(res.cart.line_items));
-        setCartLength(cart.length)
-    }
-// Setting cartLength
-    useEffect(()=>{
-        setCartLength(cart.length)
-    },[cart.length])
-// Setting totalAmount
-    useEffect(()=>{
-        commerce.cart.retrieve()
-        .then(res => setTotalAmount(res.subtotal.formatted_with_symbol))
-    },[cart.length])
-    return (
-        <>
-            {cartLength === 0 &&
-                <div className="empty-cart"><h1>Your Cart is Empty :(</h1></div>
-            }
-            {cartLength !== 0 &&
+ const history = useHistory();
+
+
+
+
+ // Component Function
+  const unoccupiedCart = ()=>(
+    <div className="empty-cart"><h1>Your Cart is Empty :(</h1></div>
+  )
+if (!cart.line_items) return <Spinner/>;
+  const busyCart = ()=>(
                 <>
-                    <h2>Total Amount: {totalAmount}</h2>
+                    <h2>Total Amount: {cart.subtotal.formatted_with_symbol}</h2>
                     <section className="busy-cart">
-                        {cart.map(item=>{return(
+                        {cart.line_items.map(item=>{return(
                             <div className="cart-item" key={item.id} >
                                 <img src={item.media.source} alt=""/>
                                 <div className="item-info">
@@ -45,7 +27,7 @@ const Mycart = ({ cart, setCart }) => {
                                     <h6><span>Price: {item.price.formatted_with_symbol}</span><span>Total: {item.line_total.formatted_with_symbol}</span></h6>
                                     <div>{item.selected_options.map(option=>{return <p key={option.group_id}>{option.group_name}: {option.option_name}</p>})}</div>
                                     <p>Quantity: {item.quantity}</p>
-                                    <p onClick={()=>removeItem(item.id)} className="remove-btn">Remove</p>
+                                    <p onClick={()=>removeFromCart(item.id)} className="remove-btn">Remove</p>
                                 </div>
                             </div>
                         )})}
@@ -55,8 +37,12 @@ const Mycart = ({ cart, setCart }) => {
                         <h3 onClick={()=>emptyCart()} style={{marginRight:"3.2%"}}>Empty Cart</h3>
                     </div>
                 </>
-            }
-        </>
+  )
+    return (
+            <>
+                {cart.total_items === 0 && unoccupiedCart()}
+                {cart.total_items !== 0 && busyCart()}
+            </>
     );
 };
 

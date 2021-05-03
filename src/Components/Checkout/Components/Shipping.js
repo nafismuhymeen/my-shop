@@ -4,7 +4,7 @@ import ShippingInputs from './ShippingInputs';
 import { useForm, FormProvider } from 'react-hook-form';
 import commerce from '../../../commerce';
 /* eslint-disable */
-const Shipping = ({ checkOutId, setCustomerData, setCheckOutPage }) => {
+const Shipping = ({ checkOutId, setCustomerData, nextPage }) => {
 // States and Variables    
     const methods = useForm();
     const [countries, setCountries] = useState([]);
@@ -67,7 +67,7 @@ const Shipping = ({ checkOutId, setCustomerData, setCheckOutPage }) => {
             <br/>
             <h2 style={{textAlign:'center'}}>Shipping Information</h2><br/>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((data, e) => { e.preventDefault(); setCustomerData({...data, country, subdivision, shipping}); setCheckOutPage(prevCheckOutPage=>prevCheckOutPage+1)})}>
+                <form onSubmit={methods.handleSubmit((data, e) => { e.preventDefault(); setCustomerData({...data, country, subdivision, shipping}); nextPage()})}>
                     <Grid container spacing={3}>
                         <ShippingInputs inputId='firstname' inputName='First Name' inputType='text' />
                         <ShippingInputs inputId='lastname' inputName='Last Name' inputType='text' />
