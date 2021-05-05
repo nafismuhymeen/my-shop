@@ -42,8 +42,8 @@ const Payments = ({checkOutId, checkOut, customerData, handleCaptureCheckout, se
                         <CardElement />
                         <br /> <br />
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <button onClick={()=>setCheckOutPage(prevCheckOutPage=>prevCheckOutPage-1)}>Back</button>
-                            <button type="submit" disabled={!stripe}>
+                            <button className="btn btn-primary" onClick={()=>setCheckOutPage(prevCheckOutPage=>prevCheckOutPage-1)}>Back</button>
+                            <button className="btn btn-primary" type="submit" disabled={!stripe}>
                             Pay {checkOut.live.subtotal.formatted_with_symbol}
                             </button>
                         </div>

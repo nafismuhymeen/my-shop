@@ -7,8 +7,8 @@ import Confirm from './Components/Confirm';
 
 
 
-
-const Checkout = ({ handleCaptureCheckout }) => {
+// Variables and States
+    const Checkout = ({ handleCaptureCheckout }) => {
     const [checkOutId, setCheckOutId] = useState('');
     const [checkOut, setCheckOut] = useState([]);
     const [customerData, setCustomerData] = useState({});
