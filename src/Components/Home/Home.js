@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import commerce from '../../commerce';
 import Spinner from '../../Spinner';
+import Category from './Category';
 import './Home.css';
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
     const history = useHistory();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
+    const [showCategory, setShowCategory] = useState(false);
+    
 
 // Function for Getting Product
     const gettingProducts = async ()=>{
@@ -19,16 +23,30 @@ const Home = () => {
     const stopSpinner = indexNumber =>{
         if(indexNumber === (products.length - 1)){
             setLoading(false)
+            setShowCategory(true)
         }
+    }
+// Function for Getting Categories
+    const getCategories = async()=>{
+        const { data } = await commerce.categories.list()
+        setCategories(data)
+    }
+//Function for Get Products by Category
+    const selectedProducts = async (slug)=>{
+         await commerce.products.list({
+            category_slug: [slug],
+          }).then(response => setProducts(response.data));
     }
 // Calling gettingProducts
     useEffect(()=>{
         gettingProducts()
+        getCategories()
     },[])
-
+    console.log(products);
     return (
         <>
             <Spinner loading={loading} />
+            {showCategory === true && <Category categories={categories} selectedProducts={selectedProducts} />}
             <section className="products">
                 {
                     products.map( (product, index) => {

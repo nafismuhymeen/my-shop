@@ -37,3 +37,21 @@
     background: #9c2321;
     
 }
+.categories{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.categories h3{
+    width: fit-content;
+    cursor: pointer;
+    background: #d2302c;
+    color: #f6f4f6;
+    padding: 7px 15px;
+    border-radius: 10px;
+    transition: .2s;
+}
+.categories h3:hover{
+    background: #9c2321;
+    
+}
