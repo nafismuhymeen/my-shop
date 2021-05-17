@@ -1,57 +1,440 @@
-.products{
-    margin-top: 100px;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.product{
-    width: 22%;
-    margin-bottom: 100px;
-}
-.product img{
-    width: 100%;
-}
-.view-product{
-    width: fit-content;
-}
-.product-info{
-    display: flex;
-    margin-top: 20px;
-    width: 100%;
-    justify-content: space-between;
-}
-.product-name-price{
-    width: 50%;
-}
-.view-product h5{
-    width: fit-content;
-    cursor: pointer;
-    background: #d2302c;
-    color: #f6f4f6;
-    padding: 7px 15px;
-    border-radius: 10px;
-    transition: .2s;
-}
-.view-product h5:hover{
-    background: #9c2321;
+/* #### Mobile Phones Portrait or Landscape #### */
+@media screen and (max-device-width: 640px){
+    .products{
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .product img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
+    .view-product h5{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        font-size: larger;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .categories h3{
+        font-size: medium;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-.categories{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+    .products{
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .product img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .view-product h5{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        font-size: larger;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .categories h3{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-.categories h3{
-    width: fit-content;
-    cursor: pointer;
-    background: #d2302c;
-    color: #f6f4f6;
-    padding: 7px 15px;
-    border-radius: 10px;
-    transition: .2s;
+/* #### iPhone 5 Portrait or Landscape #### */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2){
+    .products{
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .product img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .view-product h5{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        font-size: larger;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .categories h3{
+        font-size: medium;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-.categories h3:hover{
-    background: #9c2321;
+  
+/* #### iPhone 6 and 6 plus Portrait or Landscape #### */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+    .products{
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .product img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .view-product h5{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        font-size: larger;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .categories h3{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    .products{
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 45%;
+        margin-bottom: 50px;
+    }
+    .product img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .view-product h5{
+        font-size: small;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        font-size: larger;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+    .categories h3{
+        font-size: large;
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+  
+/* #### Desktops #### */
+@media screen and (min-width: 1024px){
+    .products{
+        margin-top: 100px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .product{
+        width: 22%;
+        margin-bottom: 100px;
+    }
+    .product img{
+        width: 100%;
+    }
+    .view-product{
+        width: fit-content;
+    }
+    .product-info{
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+    .view-product h5{
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .view-product h5:hover{
+        background: #9c2321;
+        
+    }
+    .category-title{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .categories{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
+    .categories h3{
+        width: fit-content;
+        cursor: pointer;
+        background: #d2302c;
+        color: #f6f4f6;
+        padding: 7px 15px;
+        border-radius: 10px;
+        transition: .2s;
+    }
+    .categories h3:hover{
+        background: #9c2321;
+        
+    }
+    .price-view-product{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     
 }

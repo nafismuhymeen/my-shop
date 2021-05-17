@@ -19,7 +19,6 @@
     margin-right: 20px;
     font-size: 1.1rem;
     font-weight: 500;
-    transition: 0.25s;
     cursor: pointer;
 }
 .pages p:hover{
@@ -28,4 +27,30 @@
 .w3-badge{
     background: #d2302c;
     color: #f6f4f6;
+}
+
+@media only screen and (max-width: 425px){
+    .logo img{
+        width: 100px;
+    }
+    .nav-home{
+        display: none;
+    }
+    .logo{
+        margin-left: 10px;
+    }
+    .pages p{
+        margin-right: 10px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .logo img{
+        width: 120px;
+    }
+    .logo{
+        margin-left: 10px;
+    }
+    .pages p{
+        margin-right: 10px;
+    }
 }

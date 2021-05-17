@@ -16,7 +16,7 @@ const Nav = ({ cart }) => {
                 <img onClick={()=>navigator('/')} src={logo} alt="" />
             </div>
             <div className="pages">
-                <p onClick={()=>navigator('/')}>Home</p>
+                <p className='nav-home' onClick={()=>navigator('/')}>Home</p>
                 <p onClick={()=>navigator('/my-cart')}>My Cart{cart.total_items !== 0 && <span className="w3-badge">{cart.total_items}</span>}</p>
                 
             </div>

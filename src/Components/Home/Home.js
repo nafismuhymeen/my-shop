@@ -54,12 +54,12 @@ const Home = () => {
                             <div className="product" key={product.id}>
                                 <img onLoad={()=>stopSpinner(index)} src={product.media.source} alt=""/>
                                 <div className="product-info">
-                                    <div className="product-name-price">
-                                        <h4>{product.name}</h4>
-                                        <h5>Price: {product.price.formatted_with_symbol}</h5>
-                                    </div>
-                                    <div className="view-product">
-                                        <h5 onClick={()=>history.push(`/product/${product.name}/${product.id}`)}>View Product</h5>
+                                    <h5 className='product-name'>{product.name}</h5>
+                                    <div className='price-view-product'>
+                                        <h6>Price: {product.price.formatted_with_symbol}</h6>
+                                        <div className="view-product">
+                                            <h5 onClick={()=>history.push(`/product/${product.name}/${product.id}`)}>View Product</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
